@@ -19,9 +19,11 @@ const App = () => {
         <Route path="/product" element={<Product />} />
         <Route path="/user/:abc" element={<User />} />
         <Route path="/service" element={<Service />}>
-          <Route path="add" element={<StudentAdd />} />
-          <Route path="edit" element={<StudentEdit />} />
+        <Route path="add" element={<StudentAdd />} />
+        <Route path="edit" element={<StudentEdit />} />
         </Route>
+     
+      
         <Route path="*" element={<>page not found</>} />
       </Routes>
     </BrowserRouter>

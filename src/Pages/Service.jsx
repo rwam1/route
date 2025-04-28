@@ -1,20 +1,29 @@
-import React from 'react'
-import { Link, Outlet, useLocation } from 'react-router-dom'
-
+import React from "react";
+import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
+import "./Service.css"
 const Service = () => {
-    const { state}=useLocation()
+  const { state } = useLocation();
 
-    
   return (
     <div>
       {/* {state} */}
- 
-      <Link to={'/service/add'}>Add</Link>
-      <br />
-      <Link to={'/service/edit'}>Edit</Link>
-      <Outlet/>
-    </div>
-  )
-}
 
-export default Service
+      <NavLink
+      className={({isActive})=>isActive ? "active":"inactive"}
+        to={"/service/add"}
+      >
+        Add
+      </NavLink>
+      <br />
+      <NavLink
+         className={({isActive})=>isActive ? "active":"inactive"}
+        to={"/service/edit"}
+      >
+        Edit
+      </NavLink>
+      <Outlet />
+    </div>
+  );
+};
+
+export default Service;
